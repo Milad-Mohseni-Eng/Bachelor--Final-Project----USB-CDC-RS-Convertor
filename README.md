@@ -1,24 +1,31 @@
-# Bachelor-USB-CDC-RS-Convertor
-USB CDC virtual COM (AT90USBxx) - USB to RS232 Convertor
+Bachelor Final Project — USB-to-RS232 Converter (AT90USB82/162)
+
+Overview
+
+This project implements a USB-to-Serial (RS-232) converter using the AT90USB82/162 microcontroller with native USB support.
+The system enumerates as a virtual COM port, allowing industrial and legacy RS-232 devices to communicate with modern PCs via USB.
+
+Key Features & My Contributions
+
+- Developed the firmware in C using WinAVR, including USB CDC class implementation and dynamic UART configuration up to 57,600 bps.
+
+- Designed the hardware interface for USB lines, UART level-shifting, and reliable PD2/PD3 communication.
+
+- Tested the system with HyperTerminal and multiple programmers and industrial devices.
+
+- Packaged the project with drivers, source code, and schematic documentation.
 
 
-# USB-to-RS232 Omega (USB CDC Virtual COM)
+Technologies Used
 
-*Project*: USB CDC Virtual COM -> RS232 converter (AT90USB82 / AT90USB162)  
-*Author*: Milad Mohseni
+   C programming (WinAVR compiler)
 
-## Summary
-USB CDC-based virtual COM port converter for connecting legacy RS-232 industrial devices (scales, card readers, displays) to modern PCs. Firmware written in *C* (WinAVR). Tested up to 57600 bps.
+   AT90USB82 / AT90USB162 (8-bit AVR with USB controller)
 
-## Repo structure
-- hardware/ — schematic (PDF), BOM
-- firmware/ — Source (main.c, usbcdc libs), Makefile, cdc.hex
-- driver/ — Windows driver files (INF, SYS)
-- docs/ — test plan, build & flash instructions
+   USB CDC class, virtual COM port
 
-## Build (WinAVR)
-```bash
-cd firmware/Source
-make clean
-make
-# output: firmware/cdc.hex
+   UART/RS-232 communication
+
+   USB bootloader flashing via FLIP
+
+   Hardware schematic design & debugging
